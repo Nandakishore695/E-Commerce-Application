@@ -6,7 +6,7 @@ import { useNavigate } from "react-router";
 function Login() {
     const [userEntery, setUserEntery] = useState({ loginUserName: "", loginUserPassword: "" });
     const dispatch = useDispatch();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
     const handleInput = (event) => {
         const name = event.target.name;
         const value = event.target.value;

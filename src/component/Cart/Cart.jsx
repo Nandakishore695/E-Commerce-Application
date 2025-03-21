@@ -1,9 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
     const cart = useSelector((state) => state.login?.cartValue);
+    const navigate = useNavigate();
 
+    const handleCheckout = () => {
+        navigate("/shippingAddress")
+    }
     return (
         <div className='container text-center mt-5'>
             <button>Total Qty :- {cart}</button>
@@ -17,7 +22,7 @@ const Cart = () => {
                     <button></button>
                 </div>
             </div>
-            <button>Checkout</button>
+            <button onClick={handleCheckout}>Checkout</button>
             <button>Clear Cart</button>
         </div>
     )

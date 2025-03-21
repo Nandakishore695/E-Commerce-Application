@@ -8,19 +8,12 @@ import logo from "../src/assets/logo-icon.png";
 function Layout() {
     const count = useSelector((state) => state.login?.value);
     const cart = useSelector((state) => state.login?.cartValue);
-    console.log(cart);
-
-
     const dispatch = useDispatch();
-    let navigate = useNavigate();
+    const navigate = useNavigate();
 
-    const handleLogout = () => {
-        dispatch(logout());
-    }
-
-    const handleLogoHome = () => [
-        navigate("/product")
-    ]
+    const handleLogout = () => {dispatch(logout());}
+    const handleLogoHome = () => {navigate("/product");}
+    const handleProfile = () => {navigate("/profile")}
 
     return (
         <>
@@ -38,8 +31,8 @@ function Layout() {
                                 <li><NavLink to="/cart" className='bg-primary p-3 rounded text-white text-decoration-none position-relative '>Bag
                                     <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{cart}</span>
                                 </NavLink></li>
-                                <li><NavLink to="/#" className='bg-primary p-3 rounded text-white text-decoration-none'>Profile</NavLink></li>
-                                <li><NavLink to="/product" ><button className='bg-primary p-3 rounded text-white text-decoration-none' onClick={handleLogout}>Logout</button></NavLink></li>
+                                <li><button className='bg-primary p-3 rounded text-white text-decoration-none' onClick={handleProfile}>Profile</button></li>
+                                <li><button className='bg-primary p-3 rounded text-white text-decoration-none' onClick={handleLogout}>Logout</button></li>
                             </>
                         }
                     </ul>

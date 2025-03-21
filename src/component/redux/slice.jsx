@@ -14,7 +14,6 @@ export const truthSlice = createSlice({
       state.value = false;
     },
     cartAdd: (state) => {
-      debugger
       state.cartValue = state.cartValue + 1 ;
     },
   },

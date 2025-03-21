@@ -10,8 +10,11 @@ import Login from "./component/User/Login.jsx";
 import Register from "./component/User/Register.jsx";
 import Product from './component/Product/ShowProduct.jsx';
 import Footer from './footer.jsx';
-import Cart from "./component/User/Cart.jsx"
-
+import Cart from "./component/Cart/Cart.jsx"
+import ShippingAddress from './component/Cart/ShippingAddress.jsx';
+import CheckoutAddress from './component/Cart/CheckoutAddress.jsx';
+import UserProfile from './component/User/UserProfile.jsx';
+import ViewProduct from './component/Product/ViewProduct.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -19,11 +22,15 @@ createRoot(document.getElementById('root')).render(
       <Provider store={store}>
         <Layout />
         <Routes>
-          <Route path="/product" element={<Product />} />
           <Route path="product" element={<Product />} />
+          <Route path="product" element={<Product />} />
+          <Route path="product/:id" element={<ViewProduct />} />
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="profile" element={<UserProfile />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="shippingAddress" element={<ShippingAddress />} />
+          <Route path="checkoutAddress" element={<CheckoutAddress />} />
         </Routes>
         <Footer />
       </Provider>
